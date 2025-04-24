@@ -5,7 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.1.5] - 2024-04-24
+## [0.1.6] - 2024-April 24
+
+### Improved
+
+- Added dark/light mode SVG logos for better display on different backgrounds
+- Updated README to use theme-aware logo display
+- Improved visibility of logo on npm registry
+
+## [0.1.5] - 2024-April 24
 
 ### Added
 
