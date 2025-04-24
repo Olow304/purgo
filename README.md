@@ -24,6 +24,8 @@
 - 🔌 **Zero-Config**: Works out-of-the-box with React, Next.js, Vue, and vanilla JS
 - 🧩 **Extensible**: Add custom patterns and redaction strategies
 
+📚 **[Visit the Wiki](https://github.com/Olow304/purgo/wiki)** for comprehensive documentation, guides, and best practices.
+
 ## Installation
 
 ```bash
@@ -316,6 +318,10 @@ Purgo is designed to be lightweight and fast:
 ## Contributing
 
 Contributions are welcome! Please see [CONTRIBUTING.md](./CONTRIBUTING.md) for details on how to contribute to this project.
+
+## Documentation
+
+For more detailed documentation, guides, and best practices, please visit the [Purgo Wiki](https://github.com/Olow304/purgo/wiki).
 
 ## License
 
