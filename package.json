@@ -1,6 +1,6 @@
 {
   "name": "purgo",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Zero-config PHI-scrubber for browser and Node.js",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
