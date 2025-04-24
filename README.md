@@ -1,14 +1,18 @@
-# Purgo.js
+# Purgo
+
+<p align="center">
+  <img src="Purgo.png" alt="Purgo Logo" width="500" height="200"/>
+</p>
 
 [![npm version](https://img.shields.io/npm/v/purgo.svg)](https://www.npmjs.com/package/purgo)
 [![Bundle Size](https://img.shields.io/bundlephobia/minzip/purgo)](https://bundlephobia.com/package/purgo)
 [![Tests Passing](https://img.shields.io/badge/tests-passing-brightgreen)](https://github.com/Olow304/purgo/actions)
 [![CI](https://github.com/Olow304/purgo/actions/workflows/ci.yml/badge.svg)](https://github.com/Olow304/purgo/actions/workflows/ci.yml)
-[![TypeScript](https://img.shields.io/badge/TypeScript-4.9%2B-blue)](https://www.typescriptlang.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.8-blue)](https://www.typescriptlang.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![npm downloads](https://img.shields.io/npm/dm/purgo.svg)](https://www.npmjs.com/package/purgo)
 
-**Purgo.js** is a zero-config, client-side log-scrubbing library that prevents Protected Health Information (PHI) from leaking into browser consoles, DevTools, and network debuggers.
+**Purgo** is a zero-config, client-side log-scrubbing library that prevents Protected Health Information (PHI) from leaking into browser consoles, DevTools, and network debuggers.
 
 - 🔒 **HIPAA-Friendly**: Automatically redacts PHI from logs and network requests
 - 🪶 **Lightweight**: < 7 kB gzip
