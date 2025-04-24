@@ -4,7 +4,7 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Olow304/purgo/main/dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Olow304/purgo/main/light.svg">
-    <img alt="Purgo Logo" src="https://raw.githubusercontent.com/Olow304/purgo/main/Purgo.png" width="500" height="200">
+    <img alt="Purgo Logo" src="https://raw.githubusercontent.com/Olow304/purgo/main/light.svg" width="500" height="200">
   </picture>
 </p>
 
