@@ -5,13 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.1.4] - 2023-11-16
+## [0.1.4] - 2024-04-24
 
 ### Added
 
 - Added badges to README: Tests Passing, TypeScript support, and npm downloads
+- Added GitHub Actions for CI/CD
+- Added contributing guidelines and templates
 
-## [0.1.3] - 2023-11-16
+## [0.1.3] - 2024-04-24
 
 ### Documentation
 
@@ -19,7 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Expanded Node.js documentation with combined approach using `purgo/node` and `initRedactionEngine`
 - Added note about named import issues and recommended approaches
 
-## [0.1.2] - 2023-11-15
+## [0.1.2] - 2024-04-23
 
 ### Improvements
 
@@ -32,14 +34,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed issues with fetch patching in Next.js environments
 - Improved console patching to avoid conflicts with framework internals
 
-## [0.1.1] - 2023-10-30
+## [0.1.1] - 2024-04-22
 
 ### Changes
 
 - Published package to npm
 - Added core module exports
 
-## [0.1.0] - 2023-07-15
+## [0.1.0] - 2024-04-20
 
 ### Initial Release
 
