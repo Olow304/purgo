@@ -1,7 +1,11 @@
 # Purgo
 
 <p align="center">
-  <img src="Purgo.png" alt="Purgo Logo" width="500" height="200"/>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Olow304/purgo/main/dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Olow304/purgo/main/light.svg">
+    <img alt="Purgo Logo" src="https://raw.githubusercontent.com/Olow304/purgo/main/Purgo.png" width="500" height="200">
+  </picture>
 </p>
 
 [![npm version](https://img.shields.io/npm/v/purgo.svg)](https://www.npmjs.com/package/purgo)
