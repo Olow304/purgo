@@ -13,6 +13,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added GitHub Actions for CI/CD
 - Added contributing guidelines and templates
 
+### Improved
+
+- Cleaned up repository structure
+- Added clean script to build process
+- Updated .gitignore to exclude temporary build directories
+
 ## [0.1.3] - 2024-04-24
 
 ### Documentation

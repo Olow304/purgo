@@ -35,7 +35,8 @@
     "LICENSE"
   ],
   "scripts": {
-    "build": "npm run build:types && npm run build:js",
+    "clean": "rm -rf dist dist-modified",
+    "build": "npm run clean && npm run build:types && npm run build:js",
     "build:js": "npm run build:esm && npm run build:cjs && npm run build:global && npm run rename-files",
     "build:esm": "esbuild src/index.ts src/node.ts src/redact.ts src/core.ts --bundle --format=esm --outdir=dist --outbase=src --platform=neutral --target=es2020 --external:pino",
     "build:cjs": "esbuild src/index.ts src/node.ts src/redact.ts src/core.ts --bundle --format=cjs --outdir=dist/cjs --outbase=src --platform=neutral --target=es2020 --external:pino",
