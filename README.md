@@ -2,7 +2,8 @@
 
 [![npm version](https://img.shields.io/npm/v/purgo.svg)](https://www.npmjs.com/package/purgo)
 [![Bundle Size](https://img.shields.io/bundlephobia/minzip/purgo)](https://bundlephobia.com/package/purgo)
-[![Tests Passing](https://img.shields.io/badge/tests-passing-brightgreen)](https://github.com/Olow304/purgo)
+[![Tests Passing](https://img.shields.io/badge/tests-passing-brightgreen)](https://github.com/Olow304/purgo/actions)
+[![CI](https://github.com/Olow304/purgo/actions/workflows/ci.yml/badge.svg)](https://github.com/Olow304/purgo/actions/workflows/ci.yml)
 [![TypeScript](https://img.shields.io/badge/TypeScript-4.9%2B-blue)](https://www.typescriptlang.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![npm downloads](https://img.shields.io/npm/dm/purgo.svg)](https://www.npmjs.com/package/purgo)
@@ -303,6 +304,10 @@ Purgo is designed to be lightweight and fast:
 - **Bundle Size**: < 7 kB gzip
 - **Runtime Overhead**: < 3% compared to raw operations
 - **Redaction Speed**: ≤ 40 µs to redact a 5 kB string on M1 2.8 GHz
+
+## Contributing
+
+Contributions are welcome! Please see [CONTRIBUTING.md](./CONTRIBUTING.md) for details on how to contribute to this project.
 
 ## License
 

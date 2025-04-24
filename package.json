@@ -59,6 +59,14 @@
   ],
   "author": "",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Olow304/purgo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Olow304/purgo/issues"
+  },
+  "homepage": "https://github.com/Olow304/purgo#readme",
   "devDependencies": {
     "@size-limit/preset-small-lib": "^8.2.6",
     "@types/node": "^20.5.0",
