@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { pinoRedactor } from '../dist/node.mjs';
+import { pinoRedactor } from '../src/node';
 
 describe('node patches', () => {
   // Mock process.stdout.write
@@ -14,8 +14,8 @@ describe('node patches', () => {
     vi.clearAllMocks();
 
     // Import node module to initialize patches
-    // We'll use the built version since we've already built it
-    import('../dist/node.mjs');
+    // Use the source version for tests
+    import('../src/node');
   });
 
   afterEach(() => {

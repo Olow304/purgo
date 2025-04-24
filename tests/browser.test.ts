@@ -13,10 +13,16 @@ const mockConsole = {
 
 // Mock fetch
 const originalFetch = global.fetch;
-// Create a mock fetch function
-global.fetch = vi.fn().mockImplementation(() =>
-  Promise.resolve({ ok: true, json: () => Promise.resolve({}) } as Response)
-);
+// Create a mock fetch function that doesn't make real network requests
+global.fetch = vi.fn().mockImplementation(() => {
+  return Promise.resolve({
+    ok: true,
+    status: 200,
+    json: () => Promise.resolve({}),
+    text: () => Promise.resolve(''),
+    headers: new Headers(),
+  } as Response);
+});
 
 describe('browser patches', () => {
   beforeEach(() => {
@@ -70,26 +76,41 @@ describe('browser patches', () => {
   });
 
   it('should call fetch with the provided URL', async () => {
-    await fetch('https://api.example.com/users?email=john.doe@example.com');
+    // Using a fake URL that won't make a real network request
+    const testUrl = 'https://test-url.example/users?email=john.doe@example.com';
+    await fetch(testUrl);
 
-    expect(global.fetch).toHaveBeenCalled();
-    // We're just testing that the mock was called, not the exact arguments
+    expect(global.fetch).toHaveBeenCalledWith(
+      expect.stringContaining('test-url.example'),
+      expect.anything()
+    );
   });
 
   it('should call fetch with the provided options', async () => {
-    await fetch('https://api.example.com/users', {
+    // Using a fake URL that won't make a real network request
+    const testUrl = 'https://test-url.example/users';
+    const testBody = {
+      name: 'John Doe',
+      email: 'john.doe@example.com',
+      phone: '123-456-7890'
+    };
+
+    await fetch(testUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({
-        name: 'John Doe',
-        email: 'john.doe@example.com',
-        phone: '123-456-7890'
-      })
+      body: JSON.stringify(testBody)
     });
 
-    expect(global.fetch).toHaveBeenCalled();
-    // We're just testing that the mock was called, not the exact arguments
+    expect(global.fetch).toHaveBeenCalledWith(
+      expect.stringContaining('test-url.example'),
+      expect.objectContaining({
+        method: 'POST',
+        headers: expect.objectContaining({
+          'Content-Type': 'application/json'
+        })
+      })
+    );
   });
 });
