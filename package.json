@@ -1,0 +1,77 @@
+{
+  "name": "purgo",
+  "version": "0.1.4",
+  "description": "Zero-config PHI-scrubber for browser and Node.js",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    },
+    "./node": {
+      "import": "./dist/node.mjs",
+      "require": "./dist/node.cjs",
+      "types": "./dist/node.d.ts"
+    },
+    "./redact": {
+      "import": "./dist/redact.mjs",
+      "require": "./dist/redact.cjs",
+      "types": "./dist/redact.d.ts"
+    },
+    "./core": {
+      "import": "./dist/core.mjs",
+      "require": "./dist/core.cjs",
+      "types": "./dist/core.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "legal",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "npm run build:types && npm run build:js",
+    "build:js": "npm run build:esm && npm run build:cjs && npm run build:global && npm run rename-files",
+    "build:esm": "esbuild src/index.ts src/node.ts src/redact.ts src/core.ts --bundle --format=esm --outdir=dist --outbase=src --platform=neutral --target=es2020 --external:pino",
+    "build:cjs": "esbuild src/index.ts src/node.ts src/redact.ts src/core.ts --bundle --format=cjs --outdir=dist/cjs --outbase=src --platform=neutral --target=es2020 --external:pino",
+    "build:global": "esbuild src/index.ts --bundle --format=iife --global-name=purgo --outfile=dist/index.global.js --platform=browser --target=es2020",
+    "rename-files": "mv dist/index.js dist/index.mjs && mv dist/node.js dist/node.mjs && mv dist/redact.js dist/redact.mjs && mv dist/core.js dist/core.mjs && mv dist/cjs/index.js dist/index.cjs && mv dist/cjs/node.js dist/node.cjs && mv dist/cjs/redact.js dist/redact.cjs && mv dist/cjs/core.js dist/core.cjs && rm -rf dist/cjs",
+    "build:types": "tsc --emitDeclarationOnly --outDir dist",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "size": "size-limit",
+    "lint": "eslint src --ext .ts",
+    "prepublishOnly": "npm run build && npm run test && npm run size"
+  },
+  "keywords": [
+    "phi",
+    "hipaa",
+    "redact",
+    "scrub",
+    "security",
+    "privacy",
+    "healthcare"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^8.2.6",
+    "@types/node": "^20.5.0",
+    "esbuild": "^0.19.2",
+    "eslint": "^8.47.0",
+    "size-limit": "^8.2.6",
+    "typescript": "^5.1.6",
+    "vitest": "^0.34.6"
+  },
+  "size-limit": [
+    {
+      "path": "dist/index.mjs",
+      "limit": "7 kB"
+    }
+  ]
+}

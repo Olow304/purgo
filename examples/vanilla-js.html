@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Purgo.js Vanilla JS Example</title>
+  <!-- Import Purgo from CDN -->
+  <script src="https://unpkg.com/purgo/dist/index.global.js"></script>
+</head>
+<body>
+  <h1>Patient Information</h1>
+  <div id="patient-info">
+    <p>Name: <span id="name">John Doe</span></p>
+    <p>Email: <span id="email">john.doe@example.com</span></p>
+    <p>Phone: <span id="phone">123-456-7890</span></p>
+    <p>SSN: <span id="ssn">123-45-6789</span></p>
+    <p>MRN: <span id="mrn">12345678</span></p>
+  </div>
+  <button id="log-button">Log Patient Data</button>
+
+  <script>
+    // Patient data
+    const patient = {
+      name: 'John Doe',
+      email: 'john.doe@example.com',
+      phone: '123-456-7890',
+      ssn: '123-45-6789',
+      mrn: '12345678'
+    };
+
+    // Display patient data
+    document.getElementById('name').textContent = patient.name;
+    document.getElementById('email').textContent = patient.email;
+    document.getElementById('phone').textContent = patient.phone;
+    document.getElementById('ssn').textContent = patient.ssn;
+    document.getElementById('mrn').textContent = patient.mrn;
+
+    // Add event listener to button
+    document.getElementById('log-button').addEventListener('click', () => {
+      // This log will be automatically redacted
+      console.log('Patient data:', patient);
+      
+      // API call with PHI will be redacted
+      fetch(`https://api.example.com/patients?email=${patient.email}`)
+        .then(response => response.json())
+        .then(data => console.log('API response:', data));
+    });
+  </script>
+</body>
+</html>
